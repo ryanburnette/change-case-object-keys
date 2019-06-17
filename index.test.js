@@ -2,43 +2,39 @@
 
 var changeCaseObjectKeys = require('./');
 
-test('flat object', function () {
+test('flat object', function() {
   var before = {
     fooBar: '',
     BazQux: '',
     'boo-far': ''
   };
-
   var after = {
     foo_bar: '',
     baz_qux: '',
     boo_far: ''
   };
-
   expect(changeCaseObjectKeys(before, 'snakeCase')).toStrictEqual(after);
 });
 
-test('nested objects', function () {
+test('nested objects', function() {
   var before = {
     fooBar: '',
     BazQux: {
       fooBar: '',
       BazQux: ''
-    },
+    }
   };
-
   var after = {
     foo_bar: '',
     baz_qux: {
       foo_bar: '',
       baz_qux: ''
-    },
+    }
   };
-
   expect(changeCaseObjectKeys(before, 'snakeCase')).toStrictEqual(after);
 });
 
-test('nested objects with arrays', function () {
+test('nested objects with arrays', function() {
   var before = {
     fooBar: '',
     BazQux: [
@@ -50,7 +46,6 @@ test('nested objects with arrays', function () {
       }
     ]
   };
-
   var after = {
     foo_bar: '',
     baz_qux: [
@@ -62,6 +57,16 @@ test('nested objects with arrays', function () {
       }
     ]
   };
-
   expect(changeCaseObjectKeys(before, 'snakeCase')).toStrictEqual(after);
+});
+
+test('date', function() {
+  var date = new Date();
+  var before = {
+    createdAt: date
+  };
+  var after = {
+    created_at: date
+  };
+  expect(changeCaseObjectKeys(before)).toStrictEqual(after);
 });
