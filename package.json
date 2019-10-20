@@ -1,14 +1,14 @@
 {
   "name": "@ryanburnette/change-case-object-keys",
-  "version": "1.0.1",
-  "description": "Recursively change case of all keys in an object.",
+  "version": "1.0.2",
+  "description": "Recursively change case of all keys in an object using change-case.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "gitea@code.ryanburnette.com:ryanburnette/change-case-object-keys.git"
+    "url": "https://github.com/ryanburnette/change-case-object-keys.git"
   },
   "author": "Ryan Burnette <ryan.burnette@gmail.com> (https://ryanburnette.com)",
   "license": "ISC",
